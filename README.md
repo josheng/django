@@ -7,11 +7,19 @@ ran local server using python3 manage.py runserver, similar to rails s
 
 # Some useful commands
 
+python3 -m pip install python-decouple -> install python decouple module
+
 python3 manage.py makemigrations polls -> run this to create the model/migration file
 
 python3 manage.py migrate -> this will do the migration
 
 python3 manage.py shell -> to launch interactive python shell
+
+sudo -u postgres psql -> enter postgres cmd as user postgres
+
+CREATE USER username WITH password 'xxxx'; -> create a user with pw to access psql
+
+CREATE DATABASE djangopolls; -> to create the db, in this case its djangopolls
 
 # things to take note
 
@@ -23,4 +31,4 @@ django uses context variable, aka instance variable from rails
 
 django seems to perform the logic in views? (update again when i finish django's tutorial)
 
-define url path in urls.py in the app folder -> have to define the relavent views for each path 
+define url path in urls.py in the app folder -> have to define the relavent views for each path

@@ -15,7 +15,9 @@ python3 manage.py migrate -> this will do the migration
 
 python3 manage.py shell -> to launch interactive python shell
 
-sudo -u postgres psql -> enter postgres cmd as user postgres
+sudo -u postgres psql -> enter postgres cmd as user postgres for windows
+
+sudo psql -U my.username postgres -> for macos
 
 CREATE USER username WITH password 'xxxx'; -> create a user with pw to access psql
 

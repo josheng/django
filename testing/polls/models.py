@@ -1,5 +1,6 @@
 import datetime
 
+from django.contrib import admin
 from django.db import models
 from django.utils import timezone
 
@@ -7,6 +8,12 @@ from django.utils import timezone
 class Question(models.Model):
     question_text = models.CharField(max_length=200) # this looks similar to db migration/schema from rails
     pub_date = models.DateTimeField('date published')
+
+    @admin.display(
+        boolean=True,
+        ordering='pub_date',
+        description='Published recently?',
+    )
 
     def __str__(self):
         return self.question_text # this returns the question text when u query the db API instead of just class

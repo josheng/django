@@ -27,6 +27,8 @@ CREATE DATABASE djangopolls; -> to create the db, in this case its djangopolls
 
 python3 manage.py test polls -> run test
 
+python3 manage.py createsuperuser -> creates admin account for admin site
+
 # things to take note
 
 create templates(html files) in app folder, this allows views to use the corresponding html files

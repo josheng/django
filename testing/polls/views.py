@@ -65,8 +65,8 @@ def vote(request, question_id):
 # changed index, details and results to generic views
 
 class IndexView(generic.ListView):
-    template_name = 'polls/index.html'
-    context_object_name = 'latest_question_list'
+    template_name = 'polls/index.html'  #specify which template to use, else it defaults to appname/modelname_list.html
+    context_object_name = 'latest_question_list' # tell the view to set the context variable as latest_question_list so the template can render this
 
     def get_queryset(self):
         """Return the last five published questions."""
@@ -75,9 +75,9 @@ class IndexView(generic.ListView):
 
 class DetailView(generic.DetailView):
     model = Question # tells the generic views to act upon this model
-    template_name = 'polls/detail.html'
+    template_name = 'polls/detail.html' #specify which template to use, else it defaults to appname/modelname_detail.html
 
 
 class ResultsView(generic.DetailView):
     model = Question  # tells the generic views to act upon this model
-    template_name = 'polls/results.html'
+    template_name = 'polls/results.html'  #specify which template to use, else it defaults to appname/modelname_detail.html

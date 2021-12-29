@@ -19,9 +19,13 @@ sudo -u postgres psql -> enter postgres cmd as user postgres for windows
 
 sudo psql -U my.username postgres -> for macos
 
+ALTER USER django CREATEDB; -> grant user django to createdb in psql
+
 CREATE USER username WITH password 'xxxx'; -> create a user with pw to access psql
 
 CREATE DATABASE djangopolls; -> to create the db, in this case its djangopolls
+
+python3 manage.py test polls -> run test
 
 # things to take note
 
@@ -34,3 +38,5 @@ django uses context variable, aka instance variable from rails
 django seems to perform the logic in views? (update again when i finish django's tutorial)
 
 define url path in urls.py in the app folder -> have to define the relavent views for each path
+
+https://docs.djangoproject.com/en/4.0/intro/tutorial05/#the-django-test-client -> this is to test the views

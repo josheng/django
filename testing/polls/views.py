@@ -4,6 +4,7 @@ from .models import Choice, Question # need to import the models
 # from django.template import loader # this tells django to look for the files in templates, not needed if using render
 from django.urls import reverse
 from django.views import generic
+from django.utils import timezone
 
 # def index(request):
 #     latest_question_list = Question.objects.order_by('-pub_date')[:5]

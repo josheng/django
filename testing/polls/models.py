@@ -12,7 +12,9 @@ class Question(models.Model):
         return self.question_text # this returns the question text when u query the db API instead of just class
 
     def was_published_recently(self):
-        return self.pub_date >= timezone.now() - datetime.timedelta(days=1) # this is a custom method
+        now = timezone.now()
+        return now - datetime.timedelta(days=1) <= self.pub_date <= now # replace btm line so it does not return true for future date
+        # return self.pub_date >= timezone.now() - datetime.timedelta(days=1) # this is a custom method
 
 
 class Choice(models.Model):
